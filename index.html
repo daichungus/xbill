@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>XBill fixes</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Fixes for xbill">
+    <meta name="keywords" content="xbill, linux">
+    <meta name="author" content="Daichungus">
+    <meta name="robots" content="index, follow">
+
+</head>
+
+<body>
+    <header>
+    <h1>XBill fixes</h1>
+    <h2>By <a href="https://daichungus.github.io/">Daichungus</a></h2>
+    </header>
+    <hr class="light">
+    <h1>Package Fixes</h1>
+    <h2>Wayland</h2>
+    <p>Install <code class="blocksmall">gdk-pixbuf2</code> and <code class="blocksmall">gdk-pixbuf2-modules-extra</code> through your package manager.</p>
+    <p>This way, <code>xbill</code> can load its <code>xpm</code> assets on Wayland.</p>
+    <h2>KDE or DE's not based on GNOME</h2>
+    <p><i>Optional, as it will reduce the obscene amount of errors in the terminal.</i></p>
+    <p><i>Otherwise it will cause some inconsistencies in the UI (especially for the buttons).</i></p>
+    <p>Install <code class="blocksmall">gnome-themes-extra.x86_64</code> through your package manager.</p>
+    <hr class="light">
+    <h1>Building Fixes</h1>
+    <p><i>This only applies to <a href="https://github.com/alistairmcmillan/Xbill">this version of xbill</a></i>.</p>
+    <p>After <code class="blocksmall">autoconf</code> and <code class="blocksmall">./configure --enable-gtk</code>, run</p>
+    <pre><code class="block">sed -i '2c\CFLAGS= -O2 -Wno-implicit-function-declaration' Makefile</code></pre>
+    <hr class="light">
+    <p id="last-updated"></p>
+    <script>document.getElementById("last-updated").textContent = "Last updated at " + document.lastModified;</script>
+</body>
+
+</html>

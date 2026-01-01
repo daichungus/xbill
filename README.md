@@ -57,7 +57,11 @@ Compile
 
 - `autoconf`
 - `./configure --enable-gtk`
+- `sed -i '2c\CFLAGS= -O2 -Wno-implicit-function-declaration' Makefile
 - `make`
+
+For running the game, make sure that `gdk-pixbuf2` and `gdk-pixbuf2-modules-extra`
+are installed on your system via your distro's package manager.
 
 Authors
 -------
